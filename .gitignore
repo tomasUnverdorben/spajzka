@@ -6,3 +6,4 @@ node_modules/
 .impeccable/build/crops/
 .impeccable/build/comp-grid.png
 assets/plates/
+data/

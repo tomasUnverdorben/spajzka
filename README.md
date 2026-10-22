@@ -2,15 +2,19 @@
 
 Rodinný plánovač jídel, receptů a chytrých nákupů potravin.
 
-## Spuštění prototypu
+## Spuštění aplikace
 
-Projekt je v první etapě bez sestavovacího kroku. Spusťte lokální HTTP server:
+Vyžaduje Node.js 24 nebo novější. Závislosti nejsou potřeba — server používá vestavěné moduly Node.js a SQLite:
 
 ```bash
-python3 -m http.server 4173
+npm start
 ```
 
 Poté otevřete `http://localhost:4173`.
+
+Při prvním spuštění zvolte **Vytvořit účet**. První uživatel založí domácnost a v části Rodina najde zvací kód. Další člen použije stejnou registrační obrazovku, ale místo nové domácnosti vyplní tento kód.
+
+Databáze vznikne jako `data/spajzka.sqlite`. Adresář `data/` není verzovaný a před smazáním projektu je vhodné jej zálohovat.
 
 ## Co prototyp umí
 
@@ -25,6 +29,10 @@ Poté otevřete `http://localhost:4173`.
 - vysvětlení konfliktů mezi receptem a preferencemi,
 - automaticky sloučený nákup na celý týden včetně zdrojových receptů,
 - označení surovin, které už jsou doma,
-- uložení stavu do `localStorage`.
+- lokální záložní kopii stavu v `localStorage`,
+- bezpečné uživatelské účty a přihlášení,
+- společnou domácnost se zvacím kódem,
+- synchronizaci receptů, plánu a preferencí mezi zařízeními,
+- lokální SQLite databázi v adresáři `data/`.
 
-Napojení na oficiální Rohlík MCP a trvalá databáze jsou plánované pro další etapu.
+Napojení na oficiální Rohlík MCP a produkční PostgreSQL jsou plánované pro další etapu.

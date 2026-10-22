@@ -1,0 +1,15 @@
+{
+  "name": "spajzka",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node --watch server/server.ts",
+    "start": "node server/server.ts",
+    "test": "node --test test/*.test.ts",
+    "check": "node --check app.js && node --test test/*.test.ts"
+  }
+}

@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Delegated: první mobilně přívětivý prototyp je záměrně bez sestavovacího kroku v HTML, CSS a JavaScriptu, aby šlo rychle ověřit rodinná workflow. Po ověření bude aplikační vrstva převedena na TypeScript a trvalá data do PostgreSQL; integrace s oficiálním Rohlík MCP přijde po stabilizaci základu.
+Delegated: mobilně přívětivý klient zůstává bez sestavovacího kroku v HTML, CSS a JavaScriptu. Lokální server běží v nativním TypeScriptu na Node.js a pro současnou vývojovou etapu ukládá účty, domácnosti, relace a sdílený stav do SQLite. Databázová vrstva je záměrně oddělená pro pozdější přechod na PostgreSQL; integrace s oficiálním Rohlík MCP přijde po stabilizaci základu.
 
 ## Users
 

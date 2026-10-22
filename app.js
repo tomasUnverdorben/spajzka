@@ -65,6 +65,11 @@ function loadState() {
 }
 
 let state = loadState();
+let session = null;
+let serverStateVersion = 0;
+let syncTimer = null;
+let authMode = "login";
+let authError = "";
 const app = document.querySelector("#app");
 const toast = document.querySelector("#toast");
 
@@ -72,7 +77,28 @@ function escapeHTML(value) {
   return String(value).replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
 }
 function icon(id) { return `<svg aria-hidden="true"><use href="#i-${id}" /></svg>`; }
-function save() { localStorage.setItem("spajzka-state", JSON.stringify(state)); }
+async function apiFetch(path, options = {}) {
+  const response = await fetch(path, { ...options, headers: { "Content-Type": "application/json", ...(options.headers || {}) } });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) { const error = new Error(payload.error?.message || "Server neodpověděl správně."); error.code = payload.error?.code; error.status = response.status; error.payload = payload; throw error; }
+  return payload;
+}
+function save() {
+  localStorage.setItem("spajzka-state", JSON.stringify(state));
+  if (session) { clearTimeout(syncTimer); syncTimer = setTimeout(() => syncState().catch(handleSyncError), 250); }
+}
+async function syncState() {
+  const result = await apiFetch("/api/state", { method: "PUT", body: JSON.stringify({ data: state, version: serverStateVersion }) });
+  serverStateVersion = result.version;
+  document.body.dataset.sync = "saved";
+}
+function handleSyncError(error) {
+  console.error(error);
+  document.body.dataset.sync = "error";
+  if (error.status === 401) { session = null; render(); return; }
+  if (error.code === "STATE_CONFLICT" && error.payload?.current) { state = { ...structuredClone(defaultState), ...error.payload.current.data }; serverStateVersion = error.payload.current.version; localStorage.setItem("spajzka-state", JSON.stringify(state)); render(); announce("Načetli jsme novější změny z druhého zařízení."); return; }
+  announce("Změny zůstaly uložené v tomto zařízení, synchronizace se nezdařila.");
+}
 function announce(message) {
   toast.textContent = message;
   toast.classList.add("show");
@@ -95,12 +121,26 @@ function avatars(members = selectedMembers()) {
 }
 
 function renderHeader() {
+  document.querySelector(".app-shell").classList.toggle("auth-mode", !session);
+  document.querySelector(".household-label").textContent = session?.household?.name || "Naše rodina";
   document.querySelector("#headerAvatars").innerHTML = avatars(state.members);
   document.querySelectorAll(".bottom-nav button").forEach(button => button.classList.toggle("active", button.dataset.view === state.view || (state.view === "detail" && button.dataset.view === state.previousView)));
   const count = state.shopping.filter(item => !item.done).length;
   const badge = document.querySelector("#cartBadge");
   badge.textContent = count;
   badge.hidden = count === 0;
+}
+
+function renderAuth() {
+  const register = authMode === "register";
+  app.innerHTML = `<section class="auth-view view"><div class="auth-copy"><h1>Rodinné vaření, které zná každého u stolu.</h1><p>Přihlaste se a mějte recepty, plán i nákupní seznam společný na všech zařízeních.</p><ul><li>Jedna domácnost pro celou rodinu</li><li>Preference a alergie na jednom místě</li><li>Automaticky sloučený týdenní nákup</li></ul></div><div class="auth-form-wrap"><div class="auth-tabs"><button data-auth-mode="login" class="${register ? "" : "active"}">Přihlásit</button><button data-auth-mode="register" class="${register ? "active" : ""}">Vytvořit účet</button></div><form id="authForm" class="auth-form">
+    ${register ? `<label>Vaše jméno<input name="name" autocomplete="name" required minlength="2" /></label>` : ""}
+    <label>E-mail<input name="email" type="email" autocomplete="email" required /></label>
+    <label>Heslo<input name="password" type="password" autocomplete="${register ? "new-password" : "current-password"}" required minlength="10" /></label>
+    ${register ? `<label>Název domácnosti<input name="householdName" value="Naše rodina" /></label><div class="auth-divider"><span>nebo se připojte</span></div><label>Zvací kód jiné domácnosti<input name="inviteCode" autocomplete="off" placeholder="Nepovinné" /></label>` : ""}
+    ${authError ? `<p class="form-error" role="alert">${escapeHTML(authError)}</p>` : ""}
+    <button class="primary" type="submit">${register ? "Vytvořit rodinný účet" : "Přihlásit se"}</button>
+  </form><p class="auth-note">Data zůstávají oddělená podle domácnosti. Heslo se nikdy neukládá v čitelné podobě.</p></div></section>`;
 }
 
 function compatibility(recipe) {
@@ -213,7 +253,9 @@ function renderFamily() {
       <form class="preference-form" id="preferenceForm"><input id="preferenceInput" autocomplete="off" placeholder="Například: Já nejím houby" aria-label="Nová stravovací preference" /><button class="primary">Pochopit větu</button></form>
       ${pending ? `<div class="learning-review"><span class="status-icon">${icon("spark")}</span><div><small>Špajzka navrhuje</small><strong>${escapeHTML(pending.level === "never" ? "Nikdy nenabízet" : "Doporučovat méně")}: ${escapeHTML(pending.ingredient)}</strong><p>Původní věta: „${escapeHTML(pending.label)}“</p></div><div class="review-actions"><button class="primary" id="confirmPreference">Potvrdit</button><button class="secondary" id="cancelPreference">Zrušit</button></div></div>` : ""}
       <div class="preferences">${member.preferences.map((pref, index) => `<div class="preference-item"><span><strong>${escapeHTML(pref.label)}</strong><br><small>${pref.level === "never" ? "Tvrdé omezení" : "Nižší priorita"} · ${escapeHTML(pref.ingredient)}</small></span><button data-remove-pref="${index}" data-person="${member.id}">Odstranit</button></div>`).join("") || `<div class="empty">Zatím tu nejsou žádná omezení.</div>`}</div>
-    </section></section>`;
+    </section>
+    <section class="household-settings"><div><h2>${escapeHTML(session.household.name)}</h2><p>Sdílejte zvací kód pouze s lidmi, které chcete přidat do domácnosti.</p></div><div class="invite-code"><small>Zvací kód</small><strong>${escapeHTML(session.household.inviteCode)}</strong>${session.household.role === "owner" ? `<button class="secondary" id="rotateInvite">Vytvořit nový kód</button>` : ""}</div><button class="text-button logout" id="logout">Odhlásit ${escapeHTML(session.user.name)}</button></section>
+  </section>`;
 }
 
 function renderShopping() {
@@ -228,8 +270,25 @@ function renderShopping() {
 
 function render() {
   renderHeader();
+  if (!session) { renderAuth(); bindAuthEvents(); return; }
   ({ plan: renderPlan, recipes: renderRecipes, detail: renderDetail, editor: renderEditor, shopping: renderShopping, family: renderFamily }[state.view] || renderPlan)();
   bindEvents();
+}
+
+function bindAuthEvents() {
+  document.querySelectorAll("[data-auth-mode]").forEach(button => button.addEventListener("click", () => { authMode = button.dataset.authMode; authError = ""; render(); }));
+  document.querySelector("#authForm")?.addEventListener("submit", async event => {
+    event.preventDefault(); const form = event.currentTarget; const submit = form.querySelector("button[type=submit]"); submit.disabled = true; submit.textContent = "Chvilku…";
+    try {
+      const data = Object.fromEntries(new FormData(form));
+      await apiFetch(`/api/auth/${authMode}`, { method: "POST", body: JSON.stringify(data) });
+      session = await apiFetch("/api/session");
+      const remote = await apiFetch("/api/state"); serverStateVersion = remote.version;
+      if (remote.data && Object.keys(remote.data).length) { state = { ...structuredClone(defaultState), ...remote.data }; localStorage.setItem("spajzka-state", JSON.stringify(state)); }
+      else await syncState();
+      authError = ""; render(); announce(`Vítejte, ${session.user.name}`);
+    } catch (error) { authError = error.message; render(); }
+  });
 }
 
 function openRecipe(id) {
@@ -309,10 +368,20 @@ function bindEvents() {
   });
   document.querySelector("#resetPantry")?.addEventListener("click", () => { state.pantry = []; save(); render(); });
   document.querySelector("#rohlikDemo")?.addEventListener("click", () => announce("Bezpečné napojení na Rohlík MCP připravíme v serverové etapě"));
+  document.querySelector("#rotateInvite")?.addEventListener("click", async () => { try { const result = await apiFetch("/api/household/invite", { method: "POST", body: "{}" }); session.household.inviteCode = result.inviteCode; render(); announce("Nový zvací kód je připravený"); } catch (error) { announce(error.message); } });
+  document.querySelector("#logout")?.addEventListener("click", async () => { try { await syncState(); await apiFetch("/api/auth/logout", { method: "POST", body: "{}" }); } finally { session = null; serverStateVersion = 0; render(); } });
   document.querySelector("#preferenceForm")?.addEventListener("submit", event => { event.preventDefault(); const input = document.querySelector("#preferenceInput"); const text = input.value.trim(); if (!text) { input.focus(); return; } state.pendingPreference = parsePreference(text); save(); render(); });
   document.querySelector("#confirmPreference")?.addEventListener("click", () => { const member = activeMember(); member.preferences.push(state.pendingPreference); state.pendingPreference = null; save(); render(); announce(`Preference byla uložena pro ${member.name}`); });
   document.querySelector("#cancelPreference")?.addEventListener("click", () => { state.pendingPreference = null; save(); render(); });
 }
 
 document.querySelectorAll(".bottom-nav button").forEach(button => button.addEventListener("click", () => changeView(button.dataset.view)));
-render();
+async function bootstrap() {
+  try {
+    session = await apiFetch("/api/session");
+    const remote = await apiFetch("/api/state"); serverStateVersion = remote.version;
+    if (remote.data && Object.keys(remote.data).length) { state = { ...structuredClone(defaultState), ...remote.data }; localStorage.setItem("spajzka-state", JSON.stringify(state)); }
+  } catch (error) { if (error.status !== 401) authError = "Server není dostupný. Spusťte aplikaci příkazem npm start."; }
+  render();
+}
+bootstrap();
