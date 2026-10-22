@@ -17,11 +17,14 @@ Poté otevřete `http://localhost:4173`.
 - týdenní plán jídel,
 - přiřazování různých receptů jednotlivým dnům,
 - detail receptu se surovinami a rodinným postupem,
+- vytváření, úpravu a mazání vlastních receptů,
+- přepočítání surovin podle plánovaného počtu porcí,
 - recepty filtrované podle vybraných členů domácnosti,
 - profily členů a ukládání stravovacích preferencí,
 - kontrolní krok před trvalým uložením preference,
 - vysvětlení konfliktů mezi receptem a preferencemi,
-- nákupní seznam sestavený z chybějících surovin receptů,
+- automaticky sloučený nákup na celý týden včetně zdrojových receptů,
+- označení surovin, které už jsou doma,
 - uložení stavu do `localStorage`.
 
 Napojení na oficiální Rohlík MCP a trvalá databáze jsou plánované pro další etapu.
