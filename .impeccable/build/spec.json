@@ -1,0 +1,1044 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-10-22T08:39:03.025Z",
+  "comp": ".impeccable/mocks/01-tydenni-plan.png",
+  "warnings": [
+    "region lentil-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region vegetable-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+  ],
+  "uncoveredInkCells": [],
+  "compSize": {
+    "width": 853,
+    "height": 1844
+  },
+  "aspect": 0.4626,
+  "orientation": "portrait",
+  "palette": [
+    {
+      "hex": "#f7f7ef",
+      "coverage": 0.9146
+    },
+    {
+      "hex": "#d1c5bc",
+      "coverage": 0.0342
+    },
+    {
+      "hex": "#1f0f0d",
+      "coverage": 0.0271
+    },
+    {
+      "hex": "#7c5534",
+      "coverage": 0.0127
+    },
+    {
+      "hex": "#554f4c",
+      "coverage": 0.0114
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.0289,
+      "strength": 0.2435
+    },
+    {
+      "y": 0.0578,
+      "strength": 0.4548
+    },
+    {
+      "y": 0.0794,
+      "strength": 0.5099
+    },
+    {
+      "y": 0.1011,
+      "strength": 0.22
+    },
+    {
+      "y": 0.1444,
+      "strength": 0.3245
+    },
+    {
+      "y": 0.2202,
+      "strength": 0.2803
+    },
+    {
+      "y": 0.2527,
+      "strength": 0.2225
+    },
+    {
+      "y": 0.2744,
+      "strength": 0.4516
+    },
+    {
+      "y": 0.296,
+      "strength": 0.6783
+    },
+    {
+      "y": 0.343,
+      "strength": 0.2835
+    },
+    {
+      "y": 0.444,
+      "strength": 0.352
+    },
+    {
+      "y": 0.4874,
+      "strength": 0.3555
+    },
+    {
+      "y": 0.5162,
+      "strength": 0.2643
+    },
+    {
+      "y": 0.5415,
+      "strength": 0.2585
+    },
+    {
+      "y": 0.5848,
+      "strength": 0.4266
+    },
+    {
+      "y": 0.6606,
+      "strength": 0.559
+    },
+    {
+      "y": 0.6859,
+      "strength": 0.478
+    },
+    {
+      "y": 0.7148,
+      "strength": 0.283
+    },
+    {
+      "y": 0.7437,
+      "strength": 0.3041
+    },
+    {
+      "y": 0.8014,
+      "strength": 0.4991
+    },
+    {
+      "y": 0.8592,
+      "strength": 0.3854
+    },
+    {
+      "y": 0.8989,
+      "strength": 0.6065
+    },
+    {
+      "y": 0.9242,
+      "strength": 0.2118
+    },
+    {
+      "y": 0.9856,
+      "strength": 0.7847
+    }
+  ],
+  "regions": [
+    {
+      "id": "brand",
+      "kind": "text",
+      "note": "Špajzka wordmark and compact strapline",
+      "grid": "A0:D0",
+      "coverBox": {
+        "x": 0,
+        "y": 0,
+        "w": 0.4,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0492,
+        "y": 0.0358,
+        "w": 0.3095,
+        "h": 0.064
+      },
+      "px": {
+        "x": 42,
+        "y": 66,
+        "w": 264,
+        "h": 118
+      },
+      "aspect": 2.2373,
+      "palette": [
+        {
+          "hex": "#f8f8f5",
+          "coverage": 0.7489
+        },
+        {
+          "hex": "#220a0a",
+          "coverage": 0.1864
+        },
+        {
+          "hex": "#d0c6c3",
+          "coverage": 0.033
+        },
+        {
+          "hex": "#806e6d",
+          "coverage": 0.0163
+        },
+        {
+          "hex": "#533a3a",
+          "coverage": 0.0155
+        }
+      ],
+      "detail": {
+        "energy": 42.118
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 6,
+          "capHeightPx": 39.5,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.8869,
+          "advTall": 0.8869,
+          "advX": null,
+          "gap": 0.1014,
+          "xRatio": 0.7949,
+          "stemW": 0.2759,
+          "contrast": 1.869,
+          "serif": null,
+          "densTall": 0.5806,
+          "densX": null,
+          "weight": 0.5806
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "household",
+      "kind": "control",
+      "note": "household selector with member portraits and add action",
+      "grid": "G0:J0",
+      "coverBox": {
+        "x": 0.6,
+        "y": 0,
+        "w": 0.4,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.6213,
+        "y": 0.039,
+        "w": 0.3165,
+        "h": 0.0607
+      },
+      "px": {
+        "x": 530,
+        "y": 72,
+        "w": 270,
+        "h": 112
+      },
+      "aspect": 2.4107,
+      "palette": [
+        {
+          "hex": "#f8f8f6",
+          "coverage": 0.6722
+        },
+        {
+          "hex": "#e5d8c7",
+          "coverage": 0.1042
+        },
+        {
+          "hex": "#b8aa97",
+          "coverage": 0.1039
+        },
+        {
+          "hex": "#ca8f6e",
+          "coverage": 0.0636
+        },
+        {
+          "hex": "#8e5d3b",
+          "coverage": 0.0561
+        }
+      ],
+      "detail": {
+        "energy": 35.2533
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "month",
+      "kind": "text",
+      "note": "month and year heading",
+      "grid": "A1:C1",
+      "coverBox": {
+        "x": 0,
+        "y": 0.1,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0422,
+        "y": 0.1291,
+        "w": 0.197,
+        "h": 0.0195
+      },
+      "px": {
+        "x": 36,
+        "y": 238,
+        "w": 168,
+        "h": 36
+      },
+      "aspect": 4.6667,
+      "palette": [
+        {
+          "hex": "#f8f7f5",
+          "coverage": 0.7423
+        },
+        {
+          "hex": "#120909",
+          "coverage": 0.1235
+        },
+        {
+          "hex": "#ad9f9d",
+          "coverage": 0.0602
+        },
+        {
+          "hex": "#311c1c",
+          "coverage": 0.0401
+        },
+        {
+          "hex": "#736464",
+          "coverage": 0.034
+        }
+      ],
+      "detail": {
+        "energy": 51.4223
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 21.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6646,
+          "advTall": 0.6646,
+          "advX": 0.7333,
+          "gap": 0.0458,
+          "xRatio": 0.7001,
+          "stemW": 0.2003,
+          "contrast": 1.4716,
+          "serif": 1.607,
+          "densTall": 0.4921,
+          "densX": 0.5954,
+          "weight": 0.4921
+        },
+        "widthClass": "wide",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "week-nav",
+      "kind": "control",
+      "note": "previous, current week, next controls",
+      "grid": "G1:J1",
+      "coverBox": {
+        "x": 0.6,
+        "y": 0.1,
+        "w": 0.4,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.7339,
+        "y": 0.1291,
+        "w": 0.1547,
+        "h": 0.0195
+      },
+      "px": {
+        "x": 626,
+        "y": 238,
+        "w": 132,
+        "h": 36
+      },
+      "aspect": 3.6667,
+      "palette": [
+        {
+          "hex": "#f7f7f5",
+          "coverage": 0.8511
+        },
+        {
+          "hex": "#8c7a7b",
+          "coverage": 0.0484
+        },
+        {
+          "hex": "#221515",
+          "coverage": 0.0484
+        },
+        {
+          "hex": "#5a4647",
+          "coverage": 0.0368
+        },
+        {
+          "hex": "#c8bab8",
+          "coverage": 0.0155
+        }
+      ],
+      "detail": {
+        "energy": 32.9712
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "day-strip",
+      "kind": "control",
+      "note": "seven day selector with selected Wednesday",
+      "grid": "A1:J2",
+      "coverBox": {
+        "x": 0,
+        "y": 0.1,
+        "w": 1,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.2884,
+        "y": 0.1551,
+        "w": 0.1512,
+        "h": 0.07
+      },
+      "px": {
+        "x": 246,
+        "y": 286,
+        "w": 129,
+        "h": 129
+      },
+      "aspect": 1,
+      "palette": [
+        {
+          "hex": "#981919",
+          "coverage": 0.6755
+        },
+        {
+          "hex": "#f8f6f2",
+          "coverage": 0.2931
+        },
+        {
+          "hex": "#bb6768",
+          "coverage": 0.0211
+        },
+        {
+          "hex": "#eacac5",
+          "coverage": 0.0054
+        },
+        {
+          "hex": "#d49894",
+          "coverage": 0.0049
+        }
+      ],
+      "detail": {
+        "energy": 11.3146
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "recipe-title",
+      "kind": "text",
+      "note": "meal label, recipe title and description",
+      "grid": "A2:F3",
+      "coverBox": {
+        "x": 0,
+        "y": 0.2,
+        "w": 0.6,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.0457,
+        "y": 0.2798,
+        "w": 0.5545,
+        "h": 0.1204
+      },
+      "px": {
+        "x": 39,
+        "y": 516,
+        "w": 473,
+        "h": 222
+      },
+      "aspect": 2.1306,
+      "palette": [
+        {
+          "hex": "#f7f7ef",
+          "coverage": 0.8268
+        },
+        {
+          "hex": "#1f0909",
+          "coverage": 0.0574
+        },
+        {
+          "hex": "#b39f88",
+          "coverage": 0.0481
+        },
+        {
+          "hex": "#65625f",
+          "coverage": 0.037
+        },
+        {
+          "hex": "#a09c98",
+          "coverage": 0.0307
+        }
+      ],
+      "detail": {
+        "energy": 45.3127
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 42.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.7518,
+          "advTall": 1.1512,
+          "advX": 0.6343,
+          "gap": 0.047,
+          "xRatio": 0.7097,
+          "stemW": 0.2025,
+          "contrast": 1.7503,
+          "serif": 1.8331,
+          "densTall": 0.4363,
+          "densX": 0.5701,
+          "weight": 0.4363
+        },
+        "widthClass": "normal",
+        "weightClass": "regular",
+        "chosen": {
+          "family": "Manuale",
+          "weight": 700,
+          "fontSizePx": 61,
+          "source": "catalog",
+          "estimatedSize": true,
+          "stamp": "22e221ece03e"
+        }
+      }
+    },
+    {
+      "id": "hero-food",
+      "kind": "image",
+      "note": "close editorial food photograph of chicken paprikash on a table",
+      "grid": "F2:J4",
+      "box": {
+        "x": 0.5,
+        "y": 0.2,
+        "w": 0.5,
+        "h": 0.3
+      },
+      "px": {
+        "x": 427,
+        "y": 369,
+        "w": 427,
+        "h": 553
+      },
+      "aspect": 0.7722,
+      "palette": [
+        {
+          "hex": "#f6f3e8",
+          "coverage": 0.6127
+        },
+        {
+          "hex": "#d2c2af",
+          "coverage": 0.1554
+        },
+        {
+          "hex": "#e39b39",
+          "coverage": 0.1082
+        },
+        {
+          "hex": "#7c5839",
+          "coverage": 0.0668
+        },
+        {
+          "hex": "#a5651c",
+          "coverage": 0.0568
+        }
+      ],
+      "detail": {
+        "energy": 21.6749
+      },
+      "medium": "raster",
+      "plate": "assets/plates/hero-food.png",
+      "text": null
+    },
+    {
+      "id": "recipe-meta",
+      "kind": "control",
+      "note": "time, servings and eater avatars",
+      "grid": "A4:F4",
+      "coverBox": {
+        "x": 0,
+        "y": 0.4,
+        "w": 0.6,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0492,
+        "y": 0.436,
+        "w": 0.415,
+        "h": 0.0521
+      },
+      "px": {
+        "x": 42,
+        "y": 804,
+        "w": 354,
+        "h": 96
+      },
+      "aspect": 3.6875,
+      "palette": [
+        {
+          "hex": "#f8f8f2",
+          "coverage": 0.5044
+        },
+        {
+          "hex": "#b8a994",
+          "coverage": 0.2054
+        },
+        {
+          "hex": "#daa584",
+          "coverage": 0.0989
+        },
+        {
+          "hex": "#734a2b",
+          "coverage": 0.0974
+        },
+        {
+          "hex": "#2f190d",
+          "coverage": 0.0939
+        }
+      ],
+      "detail": {
+        "energy": 37.1871
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "family-fit",
+      "kind": "control",
+      "note": "green compatibility confirmation with explanation",
+      "grid": "A5:J5",
+      "coverBox": {
+        "x": 0,
+        "y": 0.5,
+        "w": 1,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.1688,
+        "y": 0.5098,
+        "w": 0.4994,
+        "h": 0.039
+      },
+      "px": {
+        "x": 144,
+        "y": 940,
+        "w": 426,
+        "h": 72
+      },
+      "aspect": 5.9167,
+      "palette": [
+        {
+          "hex": "#e9f6e4",
+          "coverage": 0.8981
+        },
+        {
+          "hex": "#5a5e57",
+          "coverage": 0.0284
+        },
+        {
+          "hex": "#1e5a15",
+          "coverage": 0.0269
+        },
+        {
+          "hex": "#507d45",
+          "coverage": 0.0241
+        },
+        {
+          "hex": "#b4b9ad",
+          "coverage": 0.0226
+        }
+      ],
+      "detail": {
+        "energy": 42.9537
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "missing-ingredients",
+      "kind": "control",
+      "note": "pantry gap summary and missing ingredient chips",
+      "grid": "A5:J6",
+      "coverBox": {
+        "x": 0,
+        "y": 0.5,
+        "w": 1,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.0668,
+        "y": 0.5065,
+        "w": 0.6049,
+        "h": 0.0456
+      },
+      "px": {
+        "x": 57,
+        "y": 934,
+        "w": 516,
+        "h": 84
+      },
+      "aspect": 6.1429,
+      "palette": [
+        {
+          "hex": "#e9f6e5",
+          "coverage": 0.8603
+        },
+        {
+          "hex": "#275e1a",
+          "coverage": 0.0898
+        },
+        {
+          "hex": "#5a5e57",
+          "coverage": 0.0198
+        },
+        {
+          "hex": "#b4b9ad",
+          "coverage": 0.0158
+        },
+        {
+          "hex": "#68905d",
+          "coverage": 0.0143
+        }
+      ],
+      "detail": {
+        "energy": 35.3398
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "ideas-heading",
+      "kind": "text",
+      "note": "more ideas heading and all recipes link",
+      "grid": "A6:J6",
+      "coverBox": {
+        "x": 0,
+        "y": 0.6,
+        "w": 1,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0281,
+        "y": 0.6811,
+        "w": 0.2673,
+        "h": 0.0184
+      },
+      "px": {
+        "x": 24,
+        "y": 1256,
+        "w": 228,
+        "h": 34
+      },
+      "aspect": 6.7059,
+      "palette": [
+        {
+          "hex": "#f5f5ea",
+          "coverage": 0.3726
+        },
+        {
+          "hex": "#88684d",
+          "coverage": 0.1899
+        },
+        {
+          "hex": "#cbbaae",
+          "coverage": 0.1675
+        },
+        {
+          "hex": "#764b29",
+          "coverage": 0.1403
+        },
+        {
+          "hex": "#a08670",
+          "coverage": 0.1297
+        }
+      ],
+      "detail": {
+        "energy": 24.9683
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": null,
+        "measuredAt": "2026-10-22T08:39:09.022Z",
+        "note": "no separable lettering in the crop; size by the region box"
+      }
+    },
+    {
+      "id": "lentil-photo",
+      "kind": "image",
+      "note": "intentionally cropped editorial photograph of lentil soup",
+      "grid": "A7:C7",
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0.7,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "px": {
+        "x": 0,
+        "y": 1291,
+        "w": 256,
+        "h": 184
+      },
+      "aspect": 1.3913,
+      "palette": [
+        {
+          "hex": "#f5f5e6",
+          "coverage": 0.4866
+        },
+        {
+          "hex": "#88531d",
+          "coverage": 0.2143
+        },
+        {
+          "hex": "#866c52",
+          "coverage": 0.1331
+        },
+        {
+          "hex": "#47392c",
+          "coverage": 0.0859
+        },
+        {
+          "hex": "#5a3611",
+          "coverage": 0.0802
+        }
+      ],
+      "detail": {
+        "energy": 31.5426
+      },
+      "medium": "raster",
+      "plate": "assets/plates/lentil-photo.png",
+      "text": null
+    },
+    {
+      "id": "lentil-row",
+      "kind": "control",
+      "note": "lentil soup summary, metadata and compatibility",
+      "grid": "D7:J7",
+      "coverBox": {
+        "x": 0.3,
+        "y": 0.7,
+        "w": 0.7,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.3072,
+        "y": 0.7034,
+        "w": 0.3517,
+        "h": 0.0846
+      },
+      "px": {
+        "x": 262,
+        "y": 1297,
+        "w": 300,
+        "h": 156
+      },
+      "aspect": 1.9231,
+      "palette": [
+        {
+          "hex": "#f7f7ec",
+          "coverage": 0.8723
+        },
+        {
+          "hex": "#837e7b",
+          "coverage": 0.0366
+        },
+        {
+          "hex": "#4e4745",
+          "coverage": 0.0325
+        },
+        {
+          "hex": "#c2bdb7",
+          "coverage": 0.0304
+        },
+        {
+          "hex": "#170d0d",
+          "coverage": 0.0282
+        }
+      ],
+      "detail": {
+        "energy": 45.5686
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "vegetable-photo",
+      "kind": "image",
+      "note": "intentionally cropped editorial photograph of roasted vegetables",
+      "grid": "A8:C8",
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0.8,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "px": {
+        "x": 0,
+        "y": 1475,
+        "w": 256,
+        "h": 184
+      },
+      "aspect": 1.3913,
+      "palette": [
+        {
+          "hex": "#f8f7e9",
+          "coverage": 0.4638
+        },
+        {
+          "hex": "#1e100a",
+          "coverage": 0.2187
+        },
+        {
+          "hex": "#3f250c",
+          "coverage": 0.128
+        },
+        {
+          "hex": "#633810",
+          "coverage": 0.0958
+        },
+        {
+          "hex": "#94691c",
+          "coverage": 0.0937
+        }
+      ],
+      "detail": {
+        "energy": 47.5415
+      },
+      "medium": "raster",
+      "plate": "assets/plates/vegetable-photo.png",
+      "text": null
+    },
+    {
+      "id": "vegetable-row",
+      "kind": "control",
+      "note": "roasted vegetables summary, metadata and compatibility",
+      "grid": "D8:J8",
+      "coverBox": {
+        "x": 0.3,
+        "y": 0.8,
+        "w": 0.7,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.3072,
+        "y": 0.8227,
+        "w": 0.3658,
+        "h": 0.077
+      },
+      "px": {
+        "x": 262,
+        "y": 1517,
+        "w": 312,
+        "h": 142
+      },
+      "aspect": 2.1972,
+      "palette": [
+        {
+          "hex": "#f7f7ec",
+          "coverage": 0.8708
+        },
+        {
+          "hex": "#bcb8b3",
+          "coverage": 0.0365
+        },
+        {
+          "hex": "#5c5856",
+          "coverage": 0.0365
+        },
+        {
+          "hex": "#8c8984",
+          "coverage": 0.031
+        },
+        {
+          "hex": "#1a0c0c",
+          "coverage": 0.0252
+        }
+      ],
+      "detail": {
+        "energy": 51.0971
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "bottom-nav",
+      "kind": "chrome",
+      "note": "persistent four destination mobile navigation",
+      "grid": "A9:J9",
+      "box": {
+        "x": 0,
+        "y": 0.9,
+        "w": 1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 0,
+        "y": 1660,
+        "w": 853,
+        "h": 184
+      },
+      "aspect": 4.6359,
+      "palette": [
+        {
+          "hex": "#f8f8f6",
+          "coverage": 0.9593
+        },
+        {
+          "hex": "#282828",
+          "coverage": 0.0139
+        },
+        {
+          "hex": "#991a1c",
+          "coverage": 0.0126
+        },
+        {
+          "hex": "#5d5b58",
+          "coverage": 0.0114
+        },
+        {
+          "hex": "#b6b6b3",
+          "coverage": 0.0029
+        }
+      ],
+      "detail": {
+        "energy": 16.6236
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    }
+  ]
+}

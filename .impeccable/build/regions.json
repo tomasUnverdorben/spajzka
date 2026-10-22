@@ -1,0 +1,20 @@
+{
+  "regions": [
+    { "id": "brand", "kind": "text", "grid": "A0:D0", "note": "Špajzka wordmark and compact strapline" },
+    { "id": "household", "kind": "control", "grid": "G0:J0", "note": "household selector with member portraits and add action" },
+    { "id": "month", "kind": "text", "grid": "A1:C1", "note": "month and year heading" },
+    { "id": "week-nav", "kind": "control", "grid": "G1:J1", "note": "previous, current week, next controls" },
+    { "id": "day-strip", "kind": "control", "grid": "A1:J2", "note": "seven day selector with selected Wednesday" },
+    { "id": "recipe-title", "kind": "text", "grid": "A2:F3", "note": "meal label, recipe title and description" },
+    { "id": "hero-food", "kind": "image", "grid": "F2:J4", "note": "close editorial food photograph of chicken paprikash on a table" },
+    { "id": "recipe-meta", "kind": "control", "grid": "A4:F4", "note": "time, servings and eater avatars" },
+    { "id": "family-fit", "kind": "control", "grid": "A5:J5", "note": "green compatibility confirmation with explanation" },
+    { "id": "missing-ingredients", "kind": "control", "grid": "A5:J6", "note": "pantry gap summary and missing ingredient chips" },
+    { "id": "ideas-heading", "kind": "text", "grid": "A6:J6", "note": "more ideas heading and all recipes link" },
+    { "id": "lentil-photo", "kind": "image", "grid": "A7:C7", "bleed": true, "note": "intentionally cropped editorial photograph of lentil soup" },
+    { "id": "lentil-row", "kind": "control", "grid": "D7:J7", "note": "lentil soup summary, metadata and compatibility" },
+    { "id": "vegetable-photo", "kind": "image", "grid": "A8:C8", "bleed": true, "note": "intentionally cropped editorial photograph of roasted vegetables" },
+    { "id": "vegetable-row", "kind": "control", "grid": "D8:J8", "note": "roasted vegetables summary, metadata and compatibility" },
+    { "id": "bottom-nav", "kind": "chrome", "grid": "A9:J9", "note": "persistent four destination mobile navigation" }
+  ]
+}

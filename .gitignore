@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+.env*
+!.env.example
+.impeccable/review/
+.impeccable/build/crops/
+.impeccable/build/comp-grid.png
+assets/plates/

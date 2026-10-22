@@ -1,0 +1,125 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-10-22T08:33:03.527Z",
+  "comp": ".impeccable/mocks/01-tydenni-plan.png",
+  "direction": "0041ff19",
+  "breakpoint": "853x1844",
+  "artifact": null,
+  "phase": "plates",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-10-22T08:33:03.527Z",
+      "closedAt": "2026-10-22T08:38:18.554Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable/mocks/01-tydenni-plan.png",
+        "at": "2026-10-22T08:38:18.554Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-10-22T08:38:18.631Z",
+      "closedAt": "2026-10-22T08:39:09.418Z",
+      "attempts": 3,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "16 regions, 3 plates, 4 text regions measured",
+        "at": "2026-10-22T08:39:09.418Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "open",
+      "openedAt": "2026-10-22T08:39:09.418Z",
+      "closedAt": null,
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "plate assets/plates/hero-food.png is 426px wide; the comp region is 427px and a shipping plate needs at least 641px. Regenerate at asset size, do not crop the comp.",
+          "plate assets/plates/hero-food.png is the comp crop of region hero-food (structure 96% against the raw region, a resample of the same pixels): a crop of the comp is never a plate; generate the plate from the crop as reference (generate-image.mjs --plate hero-food)",
+          "plate assets/plates/lentil-photo.png is 256px wide; the comp region is 256px and a shipping plate needs at least 384px. Regenerate at asset size, do not crop the comp.",
+          "plate assets/plates/lentil-photo.png is the comp crop of region lentil-photo (structure 100% against the raw region, a resample of the same pixels): a crop of the comp is never a plate; generate the plate from the crop as reference (generate-image.mjs --plate lentil-photo)",
+          "plate assets/plates/vegetable-photo.png is 256px wide; the comp region is 256px and a shipping plate needs at least 384px. Regenerate at asset size, do not crop the comp.",
+          "plate assets/plates/vegetable-photo.png is the comp crop of region vegetable-photo (structure 100% against the raw region, a resample of the same pixels): a crop of the comp is never a plate; generate the plate from the crop as reference (generate-image.mjs --plate vegetable-photo)"
+        ],
+        "summary": "3/3 plates",
+        "at": "2026-10-22T08:41:33.246Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "sections": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "motion": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "responsive": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null,
+  "plates": {
+    "hero-food": {
+      "status": "ok",
+      "score": 1,
+      "size": "426x553"
+    },
+    "lentil-photo": {
+      "status": "ok",
+      "score": 1,
+      "size": "256x184"
+    },
+    "vegetable-photo": {
+      "status": "ok",
+      "score": 1,
+      "size": "256x184"
+    }
+  }
+}

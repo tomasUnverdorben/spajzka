@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f2e8" />
+    <meta name="description" content="Špajzka – rodinný plánovač jídel, receptů a nákupů." />
+    <title>Špajzka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manuale:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v18H7.5A3.5 3.5 0 0 0 4 23V5.5ZM20 5.5A3.5 3.5 0 0 0 16.5 2H13v18h3.5A3.5 3.5 0 0 1 20 23V5.5Z"/></symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10h10.7l2-7H6M9 19.5h.01M18 19.5h.01"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM2 21v-2a6 6 0 0 1 12 0v2M17 11a3 3 0 1 0 0-6M16 14a5 5 0 0 1 6 5v2"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.4 5.6L19 10l-5.6 1.4L12 17l-1.4-5.6L5 10l5.6-1.4L12 3ZM19 16l.7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z"/></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#plan" aria-label="Špajzka – domů">
+          <span>Špajzka</span>
+          <small>Jídlo · rodina · v pohodě</small>
+        </a>
+        <button class="household-button" id="householdButton" type="button" aria-expanded="false">
+          <span class="household-label">Naše rodina</span>
+          <span class="avatar-stack" id="headerAvatars"></span>
+          <svg><use href="#i-chevron" /></svg>
+        </button>
+      </header>
+
+      <main id="app" tabindex="-1"></main>
+
+      <nav class="bottom-nav" aria-label="Hlavní navigace">
+        <button data-view="plan" class="active"><svg><use href="#i-calendar" /></svg><span>Plán</span></button>
+        <button data-view="recipes"><svg><use href="#i-book" /></svg><span>Recepty</span></button>
+        <button data-view="shopping"><span class="nav-icon-wrap"><svg><use href="#i-cart" /></svg><b id="cartBadge">2</b></span><span>Nákup</span></button>
+        <button data-view="family"><svg><use href="#i-users" /></svg><span>Rodina</span></button>
+      </nav>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
